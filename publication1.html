@@ -9,43 +9,83 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            line-height: 1.8;
+            line-height: 1.6;
             color: #333;
-            background-color: #fafafa;
+            background-color: #f5f5f7;
         }
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 40px 20px;
         }
         header {
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        h1, h2 {
-            color: #0071e3;
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 10px;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            margin: 20px 0;
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-top: 40px;
+        }
+        p, li {
+            font-size: 18px;
+            color: #515154;
+        }
+        strong {
+            color: #1d1d1f;
+        }
+        .paper-preview {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        .paper-preview img {
+            width: 40%;
+            object-fit: cover;
+            height: 300px;
+        }
+        .paper-preview-content {
+            padding: 30px;
         }
         .cta-button {
-            background-color: #0071e3;
+            background-color: #000;
             color: #fff;
             padding: 12px 24px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 500;
-            font-size: 14px;
+            font-size: 16px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             display: inline-block;
+            margin-top: 20px;
         }
         .cta-button:hover {
-            background-color: #0077ed;
+            background-color: #333;
             transform: translateY(-2px);
+        }
+        .paper-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #06c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .paper-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -53,12 +93,19 @@
     <header>
         <div class="container">
             <h1>MiniMol: A Parameter-Efficient Foundation Model for Molecular Learning</h1>
+            <p><strong>ICML Workshop Spotlight Paper, 2024</strong></p>
         </div>
     </header>
     <main>
         <div class="container">
-            <p><strong>ICML Workshop Spotlight Paper, 2024</strong></p>
-            <p>This paper introduces MiniMol, a parameter-efficient foundation model for molecular learning. We demonstrate that by leveraging advanced pre-training techniques and a novel architecture, MiniMol achieves comparable performance to larger models while using significantly fewer parameters.</p>
+            <div class="paper-preview">
+                <img src="https://arxiv.org/abs/2404.14986.pdf#view=FitH" alt="First page of MiniMol paper">
+                <div class="paper-preview-content">
+                    <p>This paper introduces MiniMol, a parameter-efficient foundation model for molecular learning. We demonstrate that by leveraging advanced pre-training techniques and a novel architecture, MiniMol achieves comparable performance to larger models while using significantly fewer parameters.</p>
+                    <a href="https://arxiv.org/abs/2404.14986" class="paper-link" target="_blank">Read the full paper on arXiv</a>
+                </div>
+            </div>
+            
             <h2>Key Contributions</h2>
             <ul>
                 <li>Novel architecture combining aspects of transformers and graph neural networks</li>
@@ -66,6 +113,7 @@
                 <li>Comprehensive evaluation on multiple molecular property prediction tasks</li>
                 <li>Analysis of model interpretability and its implications for drug discovery</li>
             </ul>
+            
             <a href="index.html#publications" class="cta-button">Back to Publications</a>
         </div>
     </main>
