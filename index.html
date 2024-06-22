@@ -90,50 +90,43 @@
             font-weight: 600;
             letter-spacing: -0.5px;
         }
-        .project-grid, .blog-grid {
+        .project-grid, .blog-grid, .publication-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        .project-card, .blog-card {
+        .project-card, .blog-card, .publication-card {
             background-color: #fff;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
-        .project-card:hover, .blog-card:hover {
+        .project-card:hover, .blog-card:hover, .publication-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .card-content {
+            padding: 20px;
         }
         .project-card img, .blog-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-        .project-card h3, .blog-card h3 {
+        .project-card h3, .blog-card h3, .publication-card h3 {
             font-size: 20px;
-            margin: 20px;
+            margin: 0 0 10px 0;
             font-weight: 600;
         }
-        .project-card p, .blog-card p {
+        .project-card p, .blog-card p, .publication-card p {
             font-size: 14px;
-            margin: 0 20px 20px;
+            margin: 0;
             color: #666;
-        }
-        footer {
-            background-color: #f8f8f8;
-            text-align: center;
-            padding: 40px 0;
-            color: #666;
-            font-size: 14px;
-        }
-        .page {
-            display: none;
-        }
-        .page.active {
-            display: block;
         }
         .experience-item {
             margin-bottom: 40px;
@@ -158,9 +151,12 @@
         .experience-item li {
             margin-bottom: 5px;
         }
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
+        footer {
+            background-color: #f8f8f8;
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            font-size: 14px;
         }
         form {
             display: flex;
@@ -184,162 +180,160 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#home" class="nav-link" data-page="home" style="font-size: 18px; font-weight: 600;">Sam Maddrell-Mander</a>
+                <a href="#home" style="font-size: 18px; font-weight: 600;">Sam Maddrell-Mander</a>
                 <div>
-                    <a href="#experience" class="nav-link" data-page="home">Experience</a>
-                    <a href="#projects" class="nav-link" data-page="home">Projects</a>
-                    <a href="#publications" class="nav-link" data-page="home">Publications</a>
-                    <a href="#blog" class="nav-link" data-page="home">Blog</a>
-                    <a href="#contact" class="nav-link" data-page="home">Contact</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </nav>
         </div>
     </header>
 
     <main>
-        <div id="home" class="page active">
-            <section class="hero">
-                <div class="container">
-                    <h1>Sam Maddrell-Mander</h1>
-                    <p class="subtitle">AI Research Engineer | PhD in Particle Physics</p>
-                    <a href="#contact" class="cta-button nav-link" data-page="home">Get in touch</a>
-                </div>
-            </section>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Sam Maddrell-Mander</h1>
+                <p class="subtitle">AI Research Engineer | PhD in Particle Physics</p>
+                <a href="#contact" class="cta-button">Get in touch</a>
+            </div>
+        </section>
 
-            <section id="experience">
-                <div class="container">
-                    <h2>Experience</h2>
-                    <div class="experience-item">
-                        <h3>Dayhoff Labs</h3>
-                        <div class="position">AI Research Engineer</div>
-                        <div class="date">November 2023 - Present</div>
-                        <ul>
-                            <li>Lead research engineer in a small startup, designing and implementing software architecture to execute research agenda.</li>
-                            <li>Building end-to-end research framework for SOTA contrastive learning foundation model for bio-chemistry.</li>
-                            <li>Collaborating with scientists to pursue research agendas and explore novel ideas.</li>
-                        </ul>
-                    </div>
-                    <div class="experience-item">
-                        <h3>Graphcore</h3>
-                        <div class="position">AI Research Engineer</div>
-                        <div class="date">July 2022 - October 2023</div>
-                        <ul>
-                            <li>Developer & maintainer of Graphium - open source GNN framework.</li>
-                            <li>Part of competition-winning research team for molecular prediction using GNNs.</li>
-                            <li>Supported research with robust code and optimized large models for distributed hardware.</li>
-                        </ul>
-                        <div class="position">AI Engineer</div>
-                        <div class="date">May 2020 - July 2022</div>
-                        <ul>
-                            <li>Developed highly optimised LLM and BERT codebase for novel hardware.
-                            <li>Optimising total time to train over large distributed training setups.
-                        </ul>
-                    </div>
+        <section id="experience">
+            <div class="container">
+                <h2>Experience</h2>
+                <div class="experience-item">
+                    <h3>Dayhoff Labs</h3>
+                    <div class="position">AI Research Engineer</div>
+                    <div class="date">November 2023 - Present</div>
+                    <ul>
+                        <li>Lead research engineer in a small startup, designing and implementing software architecture to execute research agenda.</li>
+                        <li>Building end-to-end research framework for SOTA contrastive learning foundation model for bio-chemistry.</li>
+                        <li>Collaborating with scientists to pursue research agendas and explore novel ideas.</li>
+                    </ul>
                 </div>
-            </section>
+                <div class="experience-item">
+                    <h3>Graphcore</h3>
+                    <div class="position">AI Research Engineer</div>
+                    <div class="date">July 2022 - October 2023</div>
+                    <ul>
+                        <li>Developer & maintainer of Graphium - open source GNN framework.</li>
+                        <li>Part of competition-winning research team for molecular prediction using GNNs.</li>
+                        <li>Supported research with robust code and optimized large models for distributed hardware.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-            <section id="projects">
-                <div class="container">
-                    <h2>Notable Projects</h2>
-                    <div class="project-grid">
-                        <div class="project-card nav-link" data-page="project1">
-                            <img src="/api/placeholder/400/320" alt="GNN Research">
+        <section id="projects">
+            <div class="container">
+                <h2>Notable Projects</h2>
+                <div class="project-grid">
+                    <a href="project1.html" class="project-card">
+                        <img src="/api/placeholder/400/320" alt="GNN Research">
+                        <div class="card-content">
                             <h3>GNN for Molecular Prediction</h3>
                             <p>Developed GPS++, a novel model for the OGB Large Scale Challenge at NeurIPS.</p>
                         </div>
-                        <div class="project-card nav-link" data-page="project2">
-                            <img src="/api/placeholder/400/320" alt="LLM Optimization">
+                    </a>
+                    <a href="project2.html" class="project-card">
+                        <img src="/api/placeholder/400/320" alt="LLM Optimization">
+                        <div class="card-content">
                             <h3>LLM Optimization</h3>
-                            <a href="project2.html" class="cta-button">Learn More</a>
                             <p>Pre-training and fine-tuning LLMs on distributed hardware for SOTA throughput.</p>
                         </div>
-                        <div class="project-card nav-link" data-page="project3">
-                            <img src="/api/placeholder/400/320" alt="Particle Physics Research">
+                    </a>
+                    <a href="project3.html" class="project-card">
+                        <img src="/api/placeholder/400/320" alt="Particle Physics Research">
+                        <div class="card-content">
                             <h3>Rare Decay Measurements</h3>
                             <p>PhD research measuring extremely rare decays in particle physics, published in Nature Physics.</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="publications">
-                <div class="container">
-                    <h2>Selected Publications</h2>
-                    <ul>
-                        <li>MiniMol: A Parameter-Efficient Foundation Model for Molecular Learning (ICML Workshop Spotlight Paper, 2024)</li>
-                        <li>Towards Foundational Models for Molecular Learning on Large Scale Multi-Task Datasets (ICLR 2024)</li>
-                        <li>GPS++: Reviving the Art of Message Passing for Molecular Property Prediction (TMLR 2023)</li>
-                        <li>Test of lepton universality in beauty-quark decays (Nature Physics 2022)</li>
-                    </ul>
+        <section id="publications">
+            <div class="container">
+                <h2>Selected Publications</h2>
+                <div class="publication-grid">
+                    <a href="publication1.html" class="publication-card">
+                        <div class="card-content">
+                            <h3>MiniMol: A Parameter-Efficient Foundation Model for Molecular Learning</h3>
+                            <p>ICML Workshop Spotlight Paper, 2024</p>
+                        </div>
+                    </a>
+                    <a href="publication2.html" class="publication-card">
+                        <div class="card-content">
+                            <h3>Towards Foundational Models for Molecular Learning on Large Scale Multi-Task Datasets</h3>
+                            <p>ICLR 2024</p>
+                        </div>
+                    </a>
+                    <a href="publication3.html" class="publication-card">
+                        <div class="card-content">
+                            <h3>GPS++: Reviving the Art of Message Passing for Molecular Property Prediction</h3>
+                            <p>TMLR 2023</p>
+                        </div>
+                    </a>
+                    <a href="publication4.html" class="publication-card">
+                        <div class="card-content">
+                            <h3>Test of lepton universality in beauty-quark decays</h3>
+                            <p>Nature Physics 2022</p>
+                        </div>
+                    </a>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="blog">
-                <div class="container">
-                    <h2>Blog Posts</h2>
-                    <div class="blog-grid">
-                        <div class="blog-card nav-link" data-page="blog1">
-                            <img src="/api/placeholder/400/320" alt="Blog Post 1">
+        <section id="blog">
+            <div class="container">
+                <h2>Blog Posts</h2>
+                <div class="blog-grid">
+                    <a href="blog1.html" class="blog-card">
+                        <img src="/api/placeholder/400/320" alt="Blog Post 1">
+                        <div class="card-content">
                             <h3>The Future of AI in Biochemistry</h3>
                             <p>Exploring the potential of AI models in revolutionizing biochemical research and drug discovery.</p>
                         </div>
-                        <div class="blog-card nav-link" data-page="blog2">
-                            <img src="/api/placeholder/400/320" alt="Blog Post 2">
+                    </a>
+                    <a href="blog2.html" class="blog-card">
+                        <img src="/api/placeholder/400/320" alt="Blog Post 2">
+                        <div class="card-content">
                             <h3>Optimizing Large Language Models</h3>
                             <p>Insights and strategies for efficient training and deployment of LLMs on distributed hardware.</p>
                         </div>
-                        <div class="blog-card nav-link" data-page="blog3">
-                            <img src="/api/placeholder/400/320" alt="Blog Post 3">
+                    </a>
+                    <a href="blog3.html" class="blog-card">
+                        <img src="/api/placeholder/400/320" alt="Blog Post 3">
+                        <div class="card-content">
                             <h3>From Particle Physics to AI</h3>
                             <p>My journey from studying rare particle decays to developing cutting-edge AI models.</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="contact">
-                <div class="container">
-                    <h2>Get in Touch</h2>
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" class="cta-button">Send Message</button>
-                    </form>
-                </div>
-            </section>
+        <section id="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sam Maddrell-Mander. All rights reserved.</p>
         </div>
-
-        <div id="project1" class="page">
-            <section class="container">
-                <h2>GNN for Molecular Prediction</h2>
-                <img src="/api/placeholder/800/400" alt="GNN Research Detailed View">
-                <p>As part of the competition-winning research team at the OGB Large Scale Challenge (NeurIPS), I developed GPS++, a novel Graph Neural Network model for molecular property prediction. This project showcased the power of combining message passing neural networks with transformers for improved performance on large-scale molecular datasets.</p>
-                <a href="#projects" class="cta-button back-button nav-link" data-page="home">Back to Projects</a>
-            </section>
-        </div>
-
-        <div id="project2" class="page">
-            <section class="container">
-                <h2>LLM Optimization</h2>
-                <img src="/api/placeholder/800/400" alt="LLM Optimization Detailed View">
-                <p>At Graphcore, I worked on pre-training and fine-tuning Large Language Models (LLMs) on distributed hardware. This project involved debugging convergence issues, optimizing for state-of-the-art throughput, and implementing efficient model, data, and tensor parallel training strategies. The work resulted in significant performance improvements for LLMs running on Graphcore's IPU hardware.</p>
-                <a href="#projects" class="cta-button back-button nav-link" data-page="home">Back to Projects</a>
-            </section>
-        </div>
-
-        <div id="project3" class="page">
-            <section class="container">
-                <h2>Rare Decay Measurements in Particle Physics</h2>
-                <img src="/api/placeholder/800/400" alt="Particle Physics Research Detailed View">
-                <p>During my PhD at the University of Bristol and CERN, I focused on measuring extremely rare decays in particle physics. This research, published in Nature Physics, contributed to our understanding of fundamental particle interactions and tested the limits of the Standard Model. The project involved advanced statistical analysis, optimization techniques, and the development of machine learning approaches for particle track reconstruction.</p>
-                <a href="#projects" class="cta-button back-button nav-link" data-page="home">Back to Projects</a>
-            </section>
-        </div>
-
-        <div id="blog1" class="page">
-            <section class="container">
-                <h2>The Future of AI in Biochemistry</h2>
-                <img src="/api/placeholder/800/400" alt="AI in Biochemistry">
-                <p>In this blog post, we explore the exciting potential of AI models in revolutionizing biochemical research and drug discovery. We discuss how foundation models and contrastive learning techniques are being applied to understand complex molecular interactions and predict drug efficacy. The post covers recent advancements, challenges, and future directions in this rapidly evolving field.</p>
-                <a href="#blog" class="cta-button back-button nav-link" data-page="home">Back to Blog
+    </footer>
+</body>
+</html>
